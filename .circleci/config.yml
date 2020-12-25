@@ -29,7 +29,7 @@ executors:
       - image: circleci/ruby:latest-node-browsers
     environment:
       <<: *common_env
-  node-browsers-3.0-rc1:
+  node-browsers-3-0-rc1:
     docker:
       - image: circleci/ruby:3.0.0-rc1-node-browsers
     environment:
@@ -209,8 +209,8 @@ jobs: # a collection of steps
       - setup_database
       - system_test
       - store_test_reports
-  minitest-3.0-rc1:
-    executor: node-browsers-3.0-rc1
+  minitest-3-0-rc1:
+    executor: node-browsers-3-0-rc1
     steps:
       - checkout
       - update_rubygems
@@ -224,8 +224,8 @@ jobs: # a collection of steps
       - setup_database
       - minitest
       - store_test_reports
-  system-test-3.0-rc1:
-    executor: node-browsers-3.0-rc1
+  system-test-3-0-rc1:
+    executor: node-browsers-3-0-rc1
     steps:
       - checkout
       - update_rubygems
@@ -259,5 +259,5 @@ workflows:
       - system-test-latest
   ruby-3.0-rc1-minitest:
     jobs:
-      - minitest-3.0-rc1
-      - system-test-3.0-rc1
+      - minitest-3-0-rc1
+      - system-test-3-0-rc1
